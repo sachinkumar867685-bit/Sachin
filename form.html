@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1d4ed8, #14b8a6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: min(420px, 90%);
+            padding: 28px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+        }
+
+        label,
+        b {
+            color: #1e293b;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 6px;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #14b8a6;
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            accent-color: #14b8a6;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: 48%;
+            margin-top: 16px;
+            cursor: pointer;
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background: #1d4ed8;
+        }
+
+        input[type="reset"] {
+            background: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="NAME">NAME</label>
+        <input type="text" id="NAME" name="NAME" placeholder="Enter your name">
+        <br>
+        <br>
+        <label for="EMAIL">EMAIL</label>
+        <input type="email" id="EMAIL" name="EMAIL" placeholder="Enter your email">
+    <br>
+    <br>
+         <label for="PASSWORD">PASSWORD</label>
+         <input type="password" id="PASSWORD" name="PASSWORD" placeholder="Enter your password">
+     <br>
+     <br>
+         <label for="CONTACT NUMBER">CONTACT NUMBER</label>
+         <input type="text" id="CONTACT NUMBER" name="CONTACT NUMBER" placeholder="Enter contact number">
+     <br>
+     <br>
+        <label for="WHATSAPP NUMBER">WHATSHAPP NUMBER</label>
+        <input type="text" id="WHATSAPP NUMBER" name="WHATSAPP NUMBER" placeholder="Enter WhatsApp number">
+     <br>
+     <br>
+        <label for="COLLEGE NAME">COLLEGE NAME</label>
+        <input type="text" id="COLLEGE NAME" name="COLLEGE NAME" placeholder="Enter college name">
+    <br>
+    <br>
+         <label for="BRANCH/DEPARTMENT SECTION">BRANCH/DEPARTMENT SECTION</label>
+         <input type="text" id="BRANCH/DEPARTMENT SECTION" name="BRANCH/DEPARTMENT SECTION" placeholder="Enter branch/department">
+    <br>
+    <br>
+        <select>
+            <b><option value="1st year">1st year</option></b>
+            <b><option value="2nd year">2nd year</option></b>
+            <b><option value="3rd year">3rd year</option></b>
+            <b><option value="4th year">4th year</option></b>
+        </select>
+    <br>
+    <br>
+       <b>INTERESTED DOMAIN:</b>
+    <br>
+         <input type="checkbox" id="cybersecurity" name="cybersecurity" value="cybersecurity">
+            <label for="cybersecurity">cybersecurity</label>
+    <br>
+        <input type="checkbox" id="artificial intelligence" name="artificial intelligence" value="artificial intelligence">
+            <label for="artificial intelligence">artificial intelligence</label>
+    <br>
+        <input type="checkbox" id="AWS" name="AWS" value="AWS">
+            <label for="AWS">AWS</label>
+    <br>
+        <input type="checkbox" id="software engineer" name="software engineer" value="software engineer">
+            <label for="software engineer">software engineer</label>
+    <br>
+        <input type="checkbox" id="web development" name="web development" value="web development">
+            <label for="web development">web development</label>
+    <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="reset">
+         </form>
+
+    <script>
+        const fields = document.querySelectorAll('input, select');
+
+        fields.forEach((field, index) => {
+            field.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+
+                    const nextField = fields[index + 1];
+                    if (nextField) {
+                        nextField.focus();
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
